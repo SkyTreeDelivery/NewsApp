@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.DrawerLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/drawer_layout"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    >
+
+
+  <android.support.design.widget.CoordinatorLayout
+      android:layout_width="match_parent"
+      android:layout_height="match_parent">
+
+      <android.support.constraint.ConstraintLayout
+          android:layout_width="match_parent"
+          android:layout_height="match_parent">
+
+          <android.support.design.widget.AppBarLayout
+              android:id="@+id/appBarLayout"
+              android:layout_width="match_parent"
+              android:layout_height="62dp"
+              app:layout_constraintBottom_toTopOf="@+id/tabLayout"
+              app:layout_constraintEnd_toEndOf="parent"
+              app:layout_constraintHorizontal_bias="0.0"
+              app:layout_constraintStart_toStartOf="parent"
+              app:layout_constraintTop_toTopOf="parent">
+
+              <android.support.v7.widget.Toolbar
+                  android:id="@+id/toolbar"
+                  android:layout_width="match_parent"
+                  android:layout_height="58dp"
+                  android:background="@color/colorPrimary"
+                  android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+                  app:layout_scrollFlags="scroll|enterAlways|snap"
+                  app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
+
+              </android.support.v7.widget.Toolbar>
+
+          </android.support.design.widget.AppBarLayout>
+
+          <android.support.design.widget.TabLayout
+              android:id="@+id/tabLayout"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:layout_marginStart="8dp"
+              app:tabMode="scrollable"
+
+              app:layout_constraintBottom_toTopOf="@id/swipeRefreshLayout"
+              app:layout_constraintEnd_toEndOf="parent"
+              app:layout_constraintHorizontal_bias="0.0"
+              app:layout_constraintStart_toStartOf="parent"
+              app:layout_constraintTop_toBottomOf="@id/appBarLayout"
+              app:layout_constraintVertical_bias="0.0">
+
+          </android.support.design.widget.TabLayout>
+
+
+
+          <android.support.v4.widget.SwipeRefreshLayout
+              android:id="@+id/swipeRefreshLayout"
+              android:layout_width="0dp"
+              android:layout_height="0dp"
+              app:layout_behavior="@string/appbar_scrolling_view_behavior"
+              app:layout_constraintBottom_toBottomOf="parent"
+              app:layout_constraintEnd_toEndOf="parent"
+              app:layout_constraintHorizontal_bias="0.0"
+              app:layout_constraintStart_toStartOf="parent"
+              app:layout_constraintTop_toBottomOf="@+id/tabLayout">
+
+
+
+              <android.support.v7.widget.RecyclerView
+                  android:id="@+id/recycler_view"
+                  android:layout_width="match_parent"
+                  android:layout_height="match_parent"
+                  android:layout_marginStart="8dp"
+                  android:layout_marginEnd="8dp"
+                  android:layout_marginBottom="0dp">
+
+              </android.support.v7.widget.RecyclerView>
+          </android.support.v4.widget.SwipeRefreshLayout>
+
+
+      </android.support.constraint.ConstraintLayout>
+
+
+
+
+
+      <android.support.design.widget.FloatingActionButton
+          android:id="@+id/fab"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_margin="16dp"
+          android:layout_marginEnd="16dp"
+          android:layout_marginRight="16dp"
+          android:layout_marginBottom="16dp"
+          android:layout_gravity="bottom|end"
+          android:src="@drawable/ic_memu"
+         />
+
+
+  </android.support.design.widget.CoordinatorLayout>
+
+
+    <!-- 这个是滑动菜单里面的布局 -->
+    <!--<TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        android:text="This is drawer menu"
+        android:textSize="30sp"
+        android:background="#FFF"
+        />-->
+    <!-- 这个是真正的navigationView的layout-->
+    <android.support.design.widget.NavigationView
+        android:id="@+id/nav_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        app:menu="@menu/nav_menu"
+        app:headerLayout="@layout/header_layout"
+        >
+
+
+    </android.support.design.widget.NavigationView>
+
+
+</android.support.v4.widget.DrawerLayout>
+
